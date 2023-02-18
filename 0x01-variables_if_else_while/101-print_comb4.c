@@ -17,13 +17,16 @@ int main(void)
 		{
 			for (a = 2 ; a < 10 ; a++)
 			{
-				putchar(i + '0');
-				putchar(d + '0');
-				putchar(a + '0');
-				if (i + d + a != 24)
+				if (i < d && d < a)
 				{
-					putchar(',');
-					putchar(' ');
+					putchar(i + '0');
+					putchar(d + '0');
+					putchar(a + '0');
+					if (i + d + a != 24)
+					{
+						putchar(',');
+						putchar(' ');
+					}
 				}
 			}
 		}
