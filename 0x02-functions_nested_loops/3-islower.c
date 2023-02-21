@@ -5,13 +5,13 @@
  *
  *@c: parameter to be printed
  *
- * Return: 0
+ * Return: 1 if char is lowercase, otherwise 0.
  */
 int _islower(int c)
 {
 
-	for (c = 'a'; c <= 'z'; c++)
-		_putchar(c);
-	_putchar('\n');
-	return (0);
+	if (c >= 'a' && c <= 'z')
+		return (1);
+	else
+		return (0);
 }
