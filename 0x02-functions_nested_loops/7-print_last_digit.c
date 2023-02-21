@@ -5,7 +5,7 @@
  *
  * @i: function parameter
  *
- * Return: 0
+ * Return: d
  */
 
 int print_last_digit(int i)
@@ -16,5 +16,5 @@ int print_last_digit(int i)
 	if (d < 0)
 		d = -d;
 	_putchar(d + '0');
-	return (0);
+	return (d);
 }
