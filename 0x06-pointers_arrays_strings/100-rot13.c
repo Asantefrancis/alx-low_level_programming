@@ -1,26 +1,25 @@
-es (25 sloc)  439 Bytes
-
 #include "main.h"
-
 /**
- * rot13 - encodes a string into rot13
- * @s: string to encode
- *
- * Return: address of s
+ * rot13 - encrypts code
+ * @s: string to encrypt
+ * Return: char value
  */
 char *rot13(char *s)
 {
-	int i, j;
-	char a[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char b[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+	char part1[52] = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ";
+	char part2[52] = "nNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmM";
 
-	for (i = 0; *(s + i); i++)
+	int i;
+	int j = 0;
+
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (j = 0; j < 52; j++)
+
+		for (j = 0; part1[j] != '\0'; j++)
 		{
-			if (a[j] == *(s + i))
+			if (s[i] == part1[j])
 			{
-				*(s + i) = b[j];
+				s[i] = part2[j];
 				break;
 			}
 		}
