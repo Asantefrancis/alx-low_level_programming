@@ -3,6 +3,7 @@
  * flip_bits - returns the number of bits you would needed to flip
  * @n: number one (1)
  * @m: number two(2)
+ * Return: number of bits
  */
 
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
@@ -14,6 +15,7 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 		if ((n & 1) != (m & 1))
 			nbits++;
 	}
+
 	return (nbits);
 
 }
