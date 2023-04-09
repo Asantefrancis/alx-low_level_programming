@@ -8,14 +8,21 @@
 
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned int nbits;
+	unsigned long int difference, result;
+	unsigned int j, i;
 
-	for (nbits = 0; n || m; n >> 1, m >>= 1)
+	j = 0;
+	result = 1;
+	difference = n ^ m;
+
+	for (i = 0; i < (sizeof(unsigned long int) * 8); i++)
 	{
-		if ((n & 1) != (m & 1))
-			nbits++;
+		if (result == (difference & result))
+			j++;
+		result <<= 1;
+
 	}
 
-	return (nbits);
+	return (j);
 
 }
